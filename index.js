@@ -1,9 +1,16 @@
 const { question } = require("readline-sync");
-const { displayWordSoFar, isGameWon, isGameLost } = require("./gamelogic");
+const { displayWordSoFar, isGameWon, isGameLost, counterWronglyGuessed } = require("./gamelogic");
 
 function game(word, guesses) {
-  console.log("Dit heb je tot nu toe geraden: ", guesses);
-  console.log(displayWordSoFar(word, guesses));
+  console.log(
+      `Dit heb je tot nu toe geraden: ${guesses}
+      ${displayWordSoFar(word,guesses)}
+      
+      Je hebt ${counterWronglyGuessed(word, guesses)} keer fout geraden`);
+
+  // console.log("Dit heb je tot nu toe geraden: ", guesses);
+  // console.log(displayWordSoFar(word, guesses));
+  // console.log("Aantal keer fout geraden: ", counterWronglyGuessed(word, guesses));
 
   const letter = question("Raad een letter: ").toLowerCase();
 

@@ -59,11 +59,24 @@ function isGameLost(word, guesses) {
 
 }
 
+function counterWronglyGuessed(word, guesses){
+  let amountWrongGuesses = 0;
+
+  for(i = 0; i < guesses.length; i++ ){
+    const letter = guesses[i];
+    if(!word.includes(letter)){
+      amountWrongGuesses += 1;
+    }
+  }
+  return amountWrongGuesses;
+
+}
 
 
 module.exports = {
   displayWordSoFar: displayWordSoFar,
   isGameWon: isGameWon,
   isGameLost: isGameLost,
+  counterWronglyGuessed: counterWronglyGuessed,
 
 };
