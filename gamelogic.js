@@ -32,14 +32,20 @@ function isGameWon(word, guesses) {
 
 function isGameLost(word, guesses) {
   let amountWrongGuesses = 0;
-
-  for(i = 0; i < 7; i++){
+  // wanneer 7 x fout is geraden dan isGameLost = true
+  //wanneer guesses[i] niet voorkomt in word
+  // dan is er verkeerd geraden
+  // wanneer guesses[i] wel voorkomt in word
+  // dan is er goedgeraden
+  // wanneer verkeerd geraden >= 7 dan GameOver
+  for(i = 0; i < guesses.length; i++ ){
     const letter = guesses[i];
-    if (!word.includes(letter)) {
+    if(!word.includes(letter)){
       amountWrongGuesses += 1;
-      }
+    }
   }
   return amountWrongGuesses >= 7;
+
 }
 
 

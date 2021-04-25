@@ -60,7 +60,7 @@ test("isGameLost should return true if you've guessed 7 wrong letters or more", 
   expect(gameLost).toBe(true);
 });
 
-test("isGameLost should return false if you've guessed less than 7 wrong letters", () => {
+test.only("isGameLost should return false if you've guessed less than 7 wrong letters", () => {
   // ARRANGE
   const word = "javascript";
   const guesses = ["q", "w", "e", "a", "t"];
