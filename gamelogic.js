@@ -1,3 +1,14 @@
+// check of er slechts 1 letter als input wordt gedaan
+// input (letter -> splitsen naar array
+// alls de array.length === 1 dan pas guesses.push(letter)
+
+// function checkLetterInput(letter){
+//   const letterInput = letter.split("");
+//   return letterInput.index === 1;
+//
+// }
+
+
 function displayWordSoFar(word, guesses) {
   let guessedWord = "";
 
@@ -54,4 +65,5 @@ module.exports = {
   displayWordSoFar: displayWordSoFar,
   isGameWon: isGameWon,
   isGameLost: isGameLost,
+
 };

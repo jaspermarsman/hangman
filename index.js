@@ -5,10 +5,18 @@ function game(word, guesses) {
   console.log("Dit heb je tot nu toe geraden: ", guesses);
   console.log(displayWordSoFar(word, guesses));
 
-  const letter = question("Raad een letter: ");
+  const letter = question("Raad een letter: ").toLowerCase();
+
+  const letterInput = letter.split("");
 
   // voeg de geraden letter toe aan de array met guesses
-  guesses.push(letter);
+  if(letterInput.length === 1){
+    guesses.push(letter);
+  }
+  else {
+    console.log("Voer niet meer dan 1 letter in.")
+  }
+
 
   //check of alle woorden geraden
   //console.log : gefeliciteerd, je hebt gewonnen
