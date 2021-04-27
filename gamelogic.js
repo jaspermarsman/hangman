@@ -43,12 +43,7 @@ function isGameWon(word, guesses) {
 
 function isGameLost(word, guesses) {
   let amountWrongGuesses = 0;
-  // wanneer 7 x fout is geraden dan isGameLost = true
-  //wanneer guesses[i] niet voorkomt in word
-  // dan is er verkeerd geraden
-  // wanneer guesses[i] wel voorkomt in word
-  // dan is er goedgeraden
-  // wanneer verkeerd geraden >= 7 dan GameOver
+
   for(i = 0; i < guesses.length; i++ ){
     const letter = guesses[i];
     if(!word.includes(letter)){
@@ -60,16 +55,117 @@ function isGameLost(word, guesses) {
 }
 
 function counterWronglyGuessed(word, guesses){
-  let amountWrongGuesses = 0;
+  let amountWrongGuessed = 0;
+  const zeroWrong =
+      '\n' +
+      '\n' +
+      '\n' +
+      '\n' +
+      '\n' +
+      '===========';
+  const oneWrong =
+      '|\n' +
+      '|\n' +
+      '|\n' +
+      '|\n' +
+      '|\n' +
+      '===========';
+
+  const twoWrong =
+ `__________
+  |      
+  |      
+  |       
+  |       
+  |
+ ===========`;
+
+  const threeWrong =
+ `__________
+  | /     
+  |/      
+  |       
+  |       
+  |
+ ===========`;
+
+  const fourWrong =
+ `__________
+  | /     |
+  |/      
+  |       
+  |       
+  |
+ ===========`;
+
+  const fiveWrong =
+ `__________
+  | /     |
+  |/      o
+  |       O
+  |       
+  |
+ ===========`;
+
+  const sixWrong =
+ `__________
+  | /     |
+  |/     _o_
+  |       O
+  |       
+  |
+ ===========`;
+
+
+  const sevenWrong =
+ `__________
+  | /     |
+  |/     _o_
+  |       O
+  |      / \
+  |
+ ===========`;
+
 
   for(i = 0; i < guesses.length; i++ ){
     const letter = guesses[i];
     if(!word.includes(letter)){
-      amountWrongGuesses += 1;
+      amountWrongGuessed += 1;
     }
   }
-  return amountWrongGuesses;
 
+  switch (amountWrongGuessed) {
+    case 0:
+
+    case undefined:
+      return zeroWrong;
+      break;
+    case 0:
+      return zeroWrong;
+      break;
+    case 1:
+      return oneWrong;
+      break;
+    case 2:
+      return twoWrong;
+      break;
+    case 3:
+      return threeWrong;
+       break;
+    case 4:
+      return fourWrong;
+      break;
+    case 5:
+      return fiveWrong;
+      break;
+    case 6:
+      return sixWrong;
+      break;
+    case 7:
+      return sevenWrong;
+      break;
+
+  }
 }
 
 

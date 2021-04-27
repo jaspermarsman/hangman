@@ -4,9 +4,9 @@ const { displayWordSoFar, isGameWon, isGameLost, counterWronglyGuessed } = requi
 function game(word, guesses) {
   console.log(
       `Dit heb je tot nu toe geraden: ${guesses}
-      ${displayWordSoFar(word,guesses)}
+      ${displayWordSoFar(word,guesses)}`);
+  console.log(counterWronglyGuessed(word,guesses));
       
-      Je hebt ${counterWronglyGuessed(word, guesses)} keer fout geraden`);
 
   // console.log("Dit heb je tot nu toe geraden: ", guesses);
   // console.log(displayWordSoFar(word, guesses));
